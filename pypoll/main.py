@@ -50,20 +50,20 @@ with open(file, newline = "") as csvfile:
         else:
             cand_four += 1
 
-#storing the amount of votes each candidate received in order to find the winner    
-list_of_votes = [cand_one, cand_two, cand_three, cand_four]
+    #storing the amount of votes each candidate received in order to find the winner    
+    list_of_votes = [cand_one, cand_two, cand_three, cand_four]
 
-highest_votes = max(list_of_votes)
+    highest_votes = max(list_of_votes)
 
-#setting the highest votes initially to any candidate and then comparing
-if highest_votes == cand_one:
-    winner = uniquesCand[0]
-elif highest_votes == cand_two:
-    winner = uniquesCand[1]
-elif highest_votes == cand_three:
-    winner = uniquesCand[2]
-else: 
-    winner = uniquesCand[3]
+    #setting the highest votes initially to any candidate and then comparing
+    if highest_votes == cand_one:
+        winner = uniquesCand[0]
+    elif highest_votes == cand_two:
+        winner = uniquesCand[1]
+    elif highest_votes == cand_three:
+        winner = uniquesCand[2]
+    else: 
+        winner = uniquesCand[3]
 
 #Results
 print("Election Results")
