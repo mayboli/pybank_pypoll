@@ -49,11 +49,13 @@ with open(file, newline = "") as csvfile:
             cand_three += 1
         else:
             cand_four += 1
-    
+
+#storing the amount of votes each candidate received in order to find the winner    
 list_of_votes = [cand_one, cand_two, cand_three, cand_four]
 
 highest_votes = max(list_of_votes)
 
+#setting the highest votes initially to any candidate and then comparing
 if highest_votes == cand_one:
     winner = uniquesCand[0]
 elif highest_votes == cand_two:
@@ -76,6 +78,7 @@ print("-------------------------")
 print("Winner: " + winner)
 print("-------------------------")
 
+#writing results to text file
 file = open("export_results_poll.txt", 'w')
 
 file.write("Election Results\n")

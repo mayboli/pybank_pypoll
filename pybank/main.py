@@ -32,16 +32,19 @@ with open(file, newline = "") as csvfile:
     highest = 0
     lowest = 0
 
-    
+    #using a for loop to find changes from the next month and 
+    #summing up the changes to find average change later
     for i in range(0,(len(dateList))-1):
         
         changes.append(int(dateList[i+1][1])-int(dateList[i][1]))
         
         sum_of_changes += changes[i]
 
+    #initiating empty strings to hold the highest and lowest profit months
     highest_month = ""
     lowest_month = ""
 
+    #comparing the changes from month to month to find the highest and lowest
     for i in range(0,len(changes)):
         if changes[i] > highest:
             highest = changes[i]
@@ -52,6 +55,7 @@ with open(file, newline = "") as csvfile:
     
     average_of_changes = sum_of_changes / len(dateList)
 
+#Results
 print("Financial Analysis")
 print("----------------------------")
 print("Total Months: " + str(amount_of_rows))
@@ -60,7 +64,7 @@ print("Average Change: $" + str(round(average_of_changes, 2)))
 print("Greatest increase in Profits: " + str(highest_month) + " $" + str(highest))
 print("Greatest Decrease in Profits: " + str(lowest_month) + " $" + str(lowest))
 
-
+#writing Results to text file
 file = open("export_results.txt", 'w')
 
 file.write("Financial Analysis\n")
